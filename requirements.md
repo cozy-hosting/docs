@@ -62,7 +62,7 @@ The following paragraphs describe the project, as well as the vision of the team
 
 Please refer to the following [introductory](https://blog.cozy.gg/introduction/) blog post for detailed information about the project’s vision. Also have a look at the folowing use case diagram for a graphical representation of the functionality the service is going to offer.
 
-![Use case diagram](./assets/overall-use-case-diagramm.png)
+![Use case diagram](./assets/overall-use-case-diagram.png)
 
 ### 2.2 Product Perspective
 
