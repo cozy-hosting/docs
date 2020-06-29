@@ -1,0 +1,74 @@
+\documentclass[aspectratio=169, dvipsnames]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{xcolor}
+\usepackage{fontspec}
+
+\usepackage{minted}
+\usemintedstyle{monokai}
+
+\usepackage{blindtext}
+
+% Set focus beamer theme
+\usetheme[numbering=none]{focus}
+\usepackage{beamerthemefocus}
+\definecolor{main}{RGB}{50, 50, 50}
+\definecolor{background}{RGB}{255, 255, 255}
+
+% Custom color namespaces
+\definecolor{accent}{RGB}{253, 169, 0}
+
+% Set default font
+\setsansfont{DIN Alternate}
+\setmonofont{Fira Code}
+
+% Bebas Neue font
+\newfontfamily\bebasFamily{Bebas Neue}
+\DeclareTextFontCommand{\bebas}{\bebasFamily}
+
+% Fira Code font
+\newfontfamily\firacodeFamily{Fira Code}
+\DeclareTextFontCommand{\firacode}{\firacodeFamily}
+
+\author{Samuel Oechsler}
+
+\begin{document}
+    \title{\bebas{LaTeX Vorlage}}
+    \subtitle{für eine Präsentation}
+    %\titlegraphic{}
+    %\institute{}
+    \date{\today}
+
+    \begin{frame}
+        \maketitle
+    \end{frame}
+
+    \begin{frame}[plain]
+        \huge\bebas{Inhalt}\normalsize
+        \vfill
+        \tableofcontents
+    \end{frame}
+
+    \section{Codeblock}
+    \definecolor{background}{RGB}{50, 50, 50}
+    \begin{frame}[fragile]{}
+        \begin{figure}
+            \centering
+            \begin{minipage}{0.54\textwidth}
+                \begin{minted}[autogobble]{javascript}
+                (() => console.log("Hello World"))();
+                \end{minted}
+            \end{minipage}
+            \caption*{\textcolor{White}{JavaScript Hello World}}
+        \end{figure}
+    \end{frame}
+    \definecolor{background}{RGB}{255, 255, 255}
+
+    \section{Blindtext}
+    \begin{frame}
+        \blindtext
+    \end{frame}
+\end{document}
