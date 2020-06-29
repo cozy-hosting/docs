@@ -74,7 +74,7 @@ Since the architecture is well proven even prior to this project, no constraints
 
 ## 4. Use-Case View
 
-![Overall Use Case Diagramm](assets/overall-use-case-diagramm.png)
+![Overall Use Case Diagramm](assets/overall-use-case-diagram.png)
 
 ## 5. Logical View
 
