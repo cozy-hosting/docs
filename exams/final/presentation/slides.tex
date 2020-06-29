@@ -2,24 +2,25 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 
 \usepackage{xcolor}
 \usepackage{fontspec}
 
-\usepackage{minted}
+\usepackage[outputdir=.texpadtmp]{minted}
 \usemintedstyle{monokai}
 
 \usepackage{blindtext}
 
 % Set focus beamer theme
 \usetheme[numbering=none]{focus}
-\usepackage{beamerthemefocus}
+\usepackage{style/beamerthemefocus}
 \definecolor{main}{RGB}{50, 50, 50}
 \definecolor{background}{RGB}{255, 255, 255}
 
 % Custom color namespaces
 \definecolor{accent}{RGB}{253, 169, 0}
+\definecolor{subtitle}{RGB}{140, 140, 140}
 
 % Set default font
 \setsansfont{DIN Alternate}
@@ -33,42 +34,161 @@
 \newfontfamily\firacodeFamily{Fira Code}
 \DeclareTextFontCommand{\firacode}{\firacodeFamily}
 
-\author{Samuel Oechsler}
-
 \begin{document}
-    \title{\bebas{LaTeX Vorlage}}
-    \subtitle{für eine Präsentation}
-    %\titlegraphic{}
-    %\institute{}
-    \date{\today}
+
+	\title{cozy}
+	%\titlegraphic{}
+	\subtitle{Final exam presentation}
+	\author{Hannes, Maxim, Tim, Jens \& Samuel}
+	%\institute{}
+	\date{2. Juli 2020}
+
 
     \begin{frame}
         \maketitle
     \end{frame}
 
-    \begin{frame}[plain]
-        \huge\bebas{Inhalt}\normalsize
-        \vfill
+    \begin{frame}{Overview}
+    	\vfill
         \tableofcontents
     \end{frame}
 
-    \section{Codeblock}
-    \definecolor{background}{RGB}{50, 50, 50}
-    \begin{frame}[fragile]{}
-        \begin{figure}
-            \centering
-            \begin{minipage}{0.54\textwidth}
-                \begin{minted}[autogobble]{javascript}
-                (() => console.log("Hello World"))();
-                \end{minted}
-            \end{minipage}
-            \caption*{\textcolor{White}{JavaScript Hello World}}
-        \end{figure}
+	\section{Vision}
+	\begin{frame}{Vision\hspace{6mm}\footnotesize\color{subtitle}{Reflecting our most valuable goals}}
+		\begin{itemize}
+			\item Easy to use hosting service
+			\vfill
+			\item Super flexible deployments, enabled trough Docker
+			\vfill
+			\item Deployments are very cost efficient 
+		\end{itemize}
+	\end{frame}
+	
+	\subsection*{Use cases}
+	\begin{frame}{Use cases\hspace{6mm}\footnotesize\color{subtitle}{Overall use case diagram}}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textheight,keepaspectratio]{../../../assets/overall-use-case-diagram.png}
+		\end{figure}
+	\end{frame}
+	
+	\section{Project Methodology}
+	\begin{frame}{Project Methodology\hspace{6mm}\footnotesize\color{subtitle}{How did we approach the creation of cozy?}}
+		\vspace{0.5cm}
+		\begin{itemize}
+			\item Quickly adapt the product to requirement changes
+			\vfill
+			\item Involve feedback of everybody on the team
+			\vfill
+			\item Always focus on a functional product, whilst balancing function \& form
+		\end{itemize}
+	\end{frame}
+	\begin{frame}[focus]
+        \fontsize{128pt}{128pt}\selectfont\bebas{Agile}\normalsize\\
+        \vspace{2mm}
+        \small Scrum process, weekly sprints\normalsize
     \end{frame}
-    \definecolor{background}{RGB}{255, 255, 255}
-
-    \section{Blindtext}
-    \begin{frame}
-        \blindtext
+	
+	\section{Project Management}
+	\subsection*{Sprints}
+	\begin{frame}{Sprints\hspace{6mm}\footnotesize\color{subtitle}{Second sprint burndown}}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth,keepaspectratio]{../../../assets/burndown-second.jpg}
+		\end{figure}
+	\end{frame}
+	
+	\section{Architecture}
+	\begin{frame}{Architecture\hspace{4mm}\footnotesize\color{subtitle}{Backend}}
+		\begin{itemize}
+			\item MVC architecture provided trough ASP.Net Core
+			\item Service layer and dependency injection
+			\begin{itemize}
+				\item Improved testing of first party components and external dependencies
+			\end{itemize}
+			\item Extended modularity due to using mediator Pattern (MediatR)
+			\begin{itemize}
+				\item Slims down Requests into easily maintainable pieces of code
+				\item Validation alongside the Request instead of the data model
+			\end{itemize}
+			\item Extensible due to the ability to smoothly integrate other micro-services
+			\begin{itemize}
+				\item Allows for re-using instead of re-implementing functionality
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{Continuous Integration\hspace{4mm}\footnotesize\color{subtitle}{Backend}}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth,keepaspectratio]{../../../assets/pipeline-backend.png}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Architecture\hspace{4mm}\footnotesize\color{subtitle}{Frontend}}
+		\begin{itemize}
+			\item Single page application using Vue.JS
+			\begin{itemize}
+				\item Modern way of designing and implementing frontend
+				\item Consumes REST endpoints from the backend and various other micro-services
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{Continuous Integration\hspace{4mm}\footnotesize\color{subtitle}{Frontend}}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth,keepaspectratio]{../../../assets/pipeline-frontend.png}
+		\end{figure}
+	\end{frame}
+	
+	\section{Risk Management}
+	\begin{frame}{Risk Management\hspace{4mm}\footnotesize\color{subtitle}{The important ones}}
+		\begin{block}{Time}
+			No enough time to implement all features
+		\end{block}
+		\begin{block}{Complexity}
+			Features are to complex to implement
+		\end{block}
+		\begin{block}{Missing organization}
+			Losing overview about the project
+		\end{block}
+	\end{frame}
+	\begin{frame}[focus]
+        \fontsize{128pt}{128pt}\selectfont\bebas{Smooth}\normalsize\\
+        \vspace{2mm}
+        \small We did not encounter any planed risks!\normalsize
     \end{frame}
+	
+	\section{Quality assurance}
+	
+	\subsection*{Testing}
+	\begin{frame}{Testing\hspace{4mm}\footnotesize\color{subtitle}{Quality assurance}}
+		\begin{itemize}
+			\item Backend
+			\begin{itemize}
+				\item Unit tests using NUnit
+				\item Functional testing using Specflow\\\scriptsize Unused do to the backend relying mostly on external services\normalsize
+				\vspace{1mm}
+				\item Integration Tests possible to improve test coverage
+			\end{itemize}
+			\vfill
+			\item Frontend\newline\newline
+			\scriptsize ''Not ready for end-user deployment, thus untested and low priority''
+		\end{itemize}
+	\end{frame}
+	
+	\subsection*{Metrics}
+	\begin{frame}{Metrics\hspace{4mm}\footnotesize\color{subtitle}{Quality assurance}}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1.2\textheight,keepaspectratio]{../../../assets/metrics-codacy.jpg}
+		\end{figure}
+	\end{frame}
+	
+	\section{Technical ability}
+	\begin{frame}[focus]
+        \fontsize{128pt}{128pt}\selectfont\bebas{Demo}\normalsize\\
+        \vspace{2mm}
+        \small Lets us show you what cozy can do\normalsize
+    \end{frame}
+    
 \end{document}
