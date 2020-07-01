@@ -2,25 +2,20 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[english]{babel}
 
 \usepackage{xcolor}
 \usepackage{fontspec}
 
-%\usepackage[outputdir=.texpadtmp]{minted}
-%\usemintedstyle{monokai}
-
-%\usepackage{blindtext}
-
 % Set focus beamer theme
 \usetheme[numbering=none]{focus}
-\usepackage{style/beamerthemefocus}
+\setbeamertemplate{section in toc}[sections numbered]
 \definecolor{main}{RGB}{50, 50, 50}
 \definecolor{background}{RGB}{255, 255, 255}
 
 % Custom color namespaces
-\definecolor{accent}{RGB}{253, 169, 0}
-\definecolor{subtitle}{RGB}{140, 140, 140}
+\colorlet{subtitle}{main!40}
 
 % Set default font
 \setsansfont{DIN Alternate}
@@ -34,27 +29,51 @@
 \newfontfamily\firacodeFamily{Fira Code}
 \DeclareTextFontCommand{\firacode}{\firacodeFamily}
 
+% Custom macros
+\newcommand{\desc}[1]{
+	\hspace{4mm}
+	\color{subtitle}{
+		\footnotesize #1
+	}
+}
+
+\newcommand{\ctaframe}[2]{
+	\begin{frame}[focus]
+        \fontsize{128pt}{128pt}\selectfont
+        \bebas{#1}
+        \normalsize
+        \\
+        \vspace{6mm}
+        \small
+        #2
+        \normalsize
+    \end{frame}
+}
+% END: Custom macros
+
 \begin{document}
 
-	\title{cozy}
-	%\titlegraphic{}
+	\title{\fontsize{38pt}{38pt}\selectfont\bebas{cozy}}
 	\subtitle{Final exam presentation}
 	\author{Hannes, Maxim, Tim, Jens \& Samuel}
-	%\institute{}
 	\date{2. Juli 2020}
 
+	\section*{Title}
 
-    \begin{frame}
-        \maketitle
-    \end{frame}
+   \begin{frame}
+		\maketitle
+   \end{frame}
 
-    \begin{frame}{Overview}
-    	\vfill
-        \tableofcontents
-    \end{frame}
+	\section*{Outline}
+	
+   \begin{frame}{Outline}
+		\vfill
+		\tableofcontents
+   \end{frame}
 
 	\section{Vision}
-	\begin{frame}{Vision\hspace{6mm}\footnotesize\color{subtitle}{Reflecting our most valuable goals}}
+	
+	\begin{frame}{Vision \desc{Reflecting our most valuable goals}}
 		\begin{itemize}
 			\item Easy to use hosting service
 			\vfill
@@ -65,15 +84,17 @@
 	\end{frame}
 	
 	\subsection*{Use cases}
-	\begin{frame}{Use cases\hspace{6mm}\footnotesize\color{subtitle}{Overall use case diagram}}
+	
+	\begin{frame}{Use cases \desc{Overall use case diagram}}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\textheight,keepaspectratio]{../../../assets/overall-use-case-diagram.png}
+			\includegraphics[width=1\textheight,keepaspectratio]{assets/overall-use-case-diagram.png}
 		\end{figure}
 	\end{frame}
 	
 	\section{Project Methodology}
-	\begin{frame}{Project Methodology\hspace{6mm}\footnotesize\color{subtitle}{How did we approach the creation of cozy?}}
+	
+	\begin{frame}{Project Methodology \desc{How did we approach the creation of cozy?}}
 		\vspace{0.5cm}
 		\begin{itemize}
 			\item Quickly adapt the product to requirement changes
@@ -83,23 +104,21 @@
 			\item Always focus on a functional product, whilst balancing function \& form
 		\end{itemize}
 	\end{frame}
-	\begin{frame}[focus]
-        \fontsize{128pt}{128pt}\selectfont\bebas{Agile}\normalsize\\
-        \vspace{2mm}
-        \small Scrum process, weekly sprints\normalsize
-    \end{frame}
+	\ctaframe{Agile}{Scrum process, weekly sprints.}
 	
 	\section{Project Management}
+	
 	\subsection*{Sprints}
-	\begin{frame}{Sprints\hspace{6mm}\footnotesize\color{subtitle}{Second sprint burndown}}
+	\begin{frame}{Sprints \desc{Second sprint burndown}}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\textwidth,keepaspectratio]{../../../assets/burndown-second.jpg}
+			\includegraphics[width=1\textwidth,keepaspectratio]{assets/burndown-second.jpg}
 		\end{figure}
 	\end{frame}
 	
 	\section{Architecture}
-	\begin{frame}{Architecture\hspace{4mm}\footnotesize\color{subtitle}{Backend}}
+	
+	\begin{frame}{Architecture \desc{Backend}}
 		\begin{itemize}
 			\item MVC architecture provided trough ASP.Net Core
 			\item Service layer and dependency injection
@@ -117,14 +136,32 @@
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
+	\begin{frame}{Architecture \desc{Backend}}
+		\begin{figure}
+			\center
+			\includegraphics[width=0.9\textwidth,keepaspectratio]{assets/schema-backend.JPG}
+		\end{figure}
+	\end{frame}
+	\begin{frame}{Architecture \desc{Backend}}
+		\begin{figure}
+			\center
+			\includegraphics[height=0.7\textheight,keepaspectratio]{assets/no-auth.JPG}
+		\end{figure}
+	\end{frame}
+	\begin{frame}{Architecture \desc{Backend}}
+		\begin{figure}
+			\center
+			\includegraphics[height=0.7\textheight,keepaspectratio]{assets/forward-auth.JPG}
+		\end{figure}
+	\end{frame}
 	\begin{frame}{Continuous Integration\hspace{4mm}\footnotesize\color{subtitle}{Backend}}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\textwidth,keepaspectratio]{../../../assets/pipeline-backend.png}
+			\includegraphics[width=1\textwidth,keepaspectratio]{assets/pipeline-backend.png}
 		\end{figure}
 	\end{frame}
 	
-	\begin{frame}{Architecture\hspace{4mm}\footnotesize\color{subtitle}{Frontend}}
+	\begin{frame}{Architecture \desc{Frontend}}
 		\begin{itemize}
 			\item Single page application using Vue.JS
 			\begin{itemize}
@@ -133,15 +170,16 @@
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{Continuous Integration\hspace{4mm}\footnotesize\color{subtitle}{Frontend}}
+	\begin{frame}{Continuous Integration \desc{Frontend}}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\textwidth,keepaspectratio]{../../../assets/pipeline-frontend.png}
+			\includegraphics[width=1\textwidth,keepaspectratio]{assets/pipeline-frontend.png}
 		\end{figure}
 	\end{frame}
 	
 	\section{Risk Management}
-	\begin{frame}{Risk Management\hspace{4mm}\footnotesize\color{subtitle}{The important ones}}
+	
+	\begin{frame}{Risk Management \desc{The important ones}}
 		\begin{block}{Time}
 			No enough time to implement all features
 		\end{block}
@@ -152,16 +190,13 @@
 			Losing overview about the project
 		\end{block}
 	\end{frame}
-	\begin{frame}[focus]
-        \fontsize{128pt}{128pt}\selectfont\bebas{Smooth}\normalsize\\
-        \vspace{2mm}
-        \small We did not encounter any planed risks!\normalsize
-    \end{frame}
+	\ctaframe{Smooth}{We did not encounter any planed risks!}
 	
 	\section{Quality assurance}
 	
 	\subsection*{Testing}
-	\begin{frame}{Testing\hspace{4mm}\footnotesize\color{subtitle}{Quality assurance}}
+	
+	\begin{frame}{Testing \desc{Quality assurance}}
 		\begin{itemize}
 			\item Backend
 			\begin{itemize}
@@ -177,18 +212,16 @@
 	\end{frame}
 	
 	\subsection*{Metrics}
-	\begin{frame}{Metrics\hspace{4mm}\footnotesize\color{subtitle}{Quality assurance}}
+	
+	\begin{frame}{Metrics \desc{Quality assurance}}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1.2\textheight,keepaspectratio]{../../../assets/metrics-codacy.jpg}
+			\includegraphics[width=1.2\textheight,keepaspectratio]{assets/metrics-codacy.jpg}
 		\end{figure}
 	\end{frame}
 	
 	\section{Technical ability}
-	\begin{frame}[focus]
-        \fontsize{128pt}{128pt}\selectfont\bebas{Demo}\normalsize\\
-        \vspace{2mm}
-        \small Lets us show you what cozy can do\normalsize
-    \end{frame}
+	
+	\ctaframe{Demo}{Let us show you what \bebas{cozy} has in store.}
     
 \end{document}
