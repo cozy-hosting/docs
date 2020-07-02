@@ -2,7 +2,7 @@
 
 ## 1. Use-Case Name
 
-Manage images
+Manage images.
 
 ### 1.1 Brief Description
 
@@ -24,8 +24,8 @@ There are no special requirements needed for this use case.
 
 ## 4. Preconditions
 
-There are no preconditions for this Use-Case.
+User has to have administrator rights.
 
 ## 5. Postconditions
 
-There are no postconditions for this Use-Case.
+There are no postconditions for this use case.
