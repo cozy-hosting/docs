@@ -1,4 +1,4 @@
-# Cozy - Use-Case Specification: Manage Services
+# Cozy - Use-Case Specification: Manage Container
 
 ## 1. Use-Case Name
 
