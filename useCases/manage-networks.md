@@ -57,8 +57,10 @@ There are no postconditions for this Use-Case.
 
 ## 6. Function Points
 
-**Score:** 36 FP * 0,84 = 30FP  
+**Score:** 36 FP * 0,89 = 32FP  
 **Time Spent**: 
 
 ![Function Points Calculation](../assets/functionPoints/function-points-networks.png)
+
+![Function Points Calculation](../assets/functionPoints/fp-factor-calculation.png)
 
