@@ -32,7 +32,7 @@ There are no postconditions for this use case.
 
 ## 6. Function Points
 
-**Score:** 42 * 0.8 = 34
+**Score:** 53 * 0.79 = 42
 
 ![Function Points](../assets/functionPoints/Container-FP-Total.PNG)
 
