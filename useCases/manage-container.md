@@ -34,6 +34,6 @@ There are no postconditions for this use case.
 
 **Score:** 36 FP * 0,89 = 32FP
 
-![Function Points Calculation](../assets/functionPoints/Container-FP-Total.png)
+![Function Points](../assets/functionPoints/Container-FP-Total.PNG)
 
-![Function Points Calculation](../assets/functionPoints/Container-FP-Factor.png)
+![Function Points](../assets/functionPoints/Container-FP-Factor.PNG)
