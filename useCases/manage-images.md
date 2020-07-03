@@ -29,3 +29,11 @@ User has to have administrator rights.
 ## 5. Postconditions
 
 There are no postconditions for this use case.
+
+## 6. Function Points
+
+**Score:** 42 * 0.8 = 34
+
+![Function Points](../assets/functionPoints/Image-FP-Total.PNG)
+
+![Function Points](../assets/functionPoints/Image-FP-Faktor.PNG)
