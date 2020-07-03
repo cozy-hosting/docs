@@ -29,3 +29,11 @@ User has to have administrator rights.
 ## 5. Postconditions
 
 There are no postconditions for this use case.
+
+## 6. Function Points
+
+**Score:** 36 FP * 0,89 = 32FP
+
+![Function Points Calculation](../assets/functionPoints/Container-FP-Total.png)
+
+![Function Points Calculation](../assets/functionPoints/Container-FP-Factor.png)
