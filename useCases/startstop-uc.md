@@ -50,3 +50,13 @@ To be able to execute these action, a user has to be registered/logged in and ne
 ## 5. Postconditions
 
 n/a
+
+## 6. Function Points
+
+**Score:** 23 FP * 0,89 = 35.6FP  
+**Time Spent**: 
+
+![Function Points Calculation](../assets/functionPoints/function-points-start-stop-services.png)
+
+![Function Points Calculation](../assets/functionPoints/fp-factor-calculation.png)
+
