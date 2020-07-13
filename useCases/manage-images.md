@@ -32,8 +32,8 @@ There are no postconditions for this use case.
 
 ## 6. Function Points
 
-**Score:** 42 * 0.8 = 34
+**Score:** 42 * 0.89 = 37.38
 
 ![Function Points](../assets/functionPoints/Image-FP-Total.PNG)
 
-![Function Points](../assets/functionPoints/Image-FP-Faktor.PNG)
+![Function Points](../assets/functionPoints/fp-factor-calculation.png)

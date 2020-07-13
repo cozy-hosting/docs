@@ -77,3 +77,13 @@ The registered user has to be logged in and has already provided a payment metho
 ## 5. Postconditions
 
 There are no postconditions for this Use-Case.
+
+## 6. Function Points
+
+**Score:** 40 FP * 0,89 = 35.6FP  
+**Time Spent**: 
+
+![Function Points Calculation](../assets/functionPoints/function-points-manage-services.png)
+
+![Function Points Calculation](../assets/functionPoints/fp-factor-calculation.png)
+

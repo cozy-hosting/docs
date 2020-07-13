@@ -32,8 +32,8 @@ There are no postconditions for this use case.
 
 ## 6. Function Points
 
-**Score:** 53 * 0.79 = 42
+**Score:** 53 * 0.89 = 47.17
 
 ![Function Points](../assets/functionPoints/Container-FP-Total.PNG)
 
-![Function Points](../assets/functionPoints/Container-FP-Factor.PNG)
+![Function Points](../assets/functionPoints/fp-factor-calculation.png)
